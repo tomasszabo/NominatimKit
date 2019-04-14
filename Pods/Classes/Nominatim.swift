@@ -10,13 +10,17 @@ import Foundation
 
 public class Nominatim {
 	
-		public class func getLocation(fromAddress address: String, completion: @escaping (_ result: Location?) -> Void)  {
+		public static var identifier: String? = nil;
+	
+		public class func getLocation(fromAddress address: String, completion: @escaping (_ result: NominatimLocation?) -> Void)  {
         
         let queryURL =  URL(string:"https://nominatim.openstreetmap.org/search/" + address.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! + "?format=json&addressdetails=1&limit=1")!
-				let request = URLRequest.init(url: queryURL);
+				var request = URLRequest.init(url: queryURL);
 			
-			  //TODO: set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
-				//request.setValue("", forHTTPHeaderField: "User-Agent")
+			  //Set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
+				if let identifier = Nominatim.identifier {
+					request.setValue(identifier, forHTTPHeaderField: "User-Agent")
+				}
 			
 				let session = URLSession.shared
 			
@@ -50,7 +54,7 @@ public class Nominatim {
                                     }
                                 }
                                 
-															completion(Location(lat: array[0]["lat"] as! String, lon: array[0]["lon"] as! String, name: array[0]["name"] as? String, displayName: array[0]["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: array[0]["licence"] as? String))
+															completion(NominatimLocation(lat: array[0]["lat"] as! String, lon: array[0]["lon"] as! String, name: array[0]["name"] as? String, displayName: array[0]["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: array[0]["licence"] as? String))
                                 
                             } else {
                                 completion(nil)
@@ -72,13 +76,15 @@ public class Nominatim {
         }).resume()
     }
     
-    public class func getLocation(fromLatitude latitude: String, longitude: String, completion: @escaping (_ error: Error?, _ result: Location?) -> Void)  {
+    public class func getLocation(fromLatitude latitude: String, longitude: String, completion: @escaping (_ error: Error?, _ result: NominatimLocation?) -> Void)  {
         
         let queryURL =  URL(string:"https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude + "&addressdetails=1&limit=1")!
-				let request = URLRequest.init(url: queryURL);
+				var request = URLRequest.init(url: queryURL);
 			
-				//TODO: set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
-				//request.setValue("", forHTTPHeaderField: "User-Agent")
+				//Set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
+				if let identifier = Nominatim.identifier {
+					request.setValue(identifier, forHTTPHeaderField: "User-Agent")
+				}
 			
 				let session = URLSession.shared
         
@@ -109,7 +115,7 @@ public class Nominatim {
                         state = address["state"]
                     }
                     
-                    completion(nil, Location(lat: dict["lat"] as! String, lon: dict["lon"] as! String, name: dict["name"] as? String, displayName: dict["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: dict["licence"] as? String))
+                    completion(nil, NominatimLocation(lat: dict["lat"] as! String, lon: dict["lon"] as! String, name: dict["name"] as? String, displayName: dict["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: dict["licence"] as? String))
                 }
                 
             } catch {
@@ -120,7 +126,7 @@ public class Nominatim {
     }
 }
 
-public class Location {
+public class NominatimLocation {
     
     public var latitude: String
     public var longitude: String

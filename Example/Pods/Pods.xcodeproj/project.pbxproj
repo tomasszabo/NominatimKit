@@ -32,9 +32,9 @@
 /* Begin PBXFileReference section */
 		0BFF9A3C7BEE731A5CBF611FC5F836CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149AA7617A7EB215DB65658673806B42 /* Pods-Nominatim_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nominatim_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1D7D8BC53B3D3080BD0D4696B5D57269 /* Pods-Nominatim_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Nominatim_Tests.modulemap"; sourceTree = "<group>"; };
+		1D7D8BC53B3D3080BD0D4696B5D57269 /* Pods-Nominatim_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nominatim_Tests.modulemap"; sourceTree = "<group>"; };
 		2CED22D62C18CABE4AFBCA68578B1E1D /* Pods-Nominatim_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nominatim_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		36D17E2AA4CE0489EF54CE941E9DED95 /* Pods-Nominatim_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Nominatim_Example.modulemap"; sourceTree = "<group>"; };
+		36D17E2AA4CE0489EF54CE941E9DED95 /* Pods-Nominatim_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nominatim_Example.modulemap"; sourceTree = "<group>"; };
 		39D715E883EF9F5EC579CB8E208572E4 /* Nominatim-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nominatim-umbrella.h"; sourceTree = "<group>"; };
 		42BA71296FF7933DD8C10E1001E2035A /* Pods-Nominatim_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nominatim_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4A8B8B932E94DCEED26636AD5B94A9C8 /* Pods-Nominatim_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nominatim_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -45,23 +45,23 @@
 		83579F4564F3B2841108A10D7E5D926D /* Pods-Nominatim_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nominatim_Tests-dummy.m"; sourceTree = "<group>"; };
 		8A1E2666DBDA799B532E9181778D969A /* Nominatim.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nominatim.xcconfig; sourceTree = "<group>"; };
 		8DB5192ACEDE886956B1F795317DE053 /* Pods-Nominatim_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nominatim_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9867DD7A5C327EF584023B7D5B7EA5C5 /* Pods-Nominatim_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nominatim_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9A19231CBEFF6AE92E069EDAB3248416 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6549A9AE0CEAC52EC93E7C965BA3812 /* Nominatim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nominatim.framework; path = Nominatim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6854BA6D8C5A6B03CE237F80FC7C7B9 /* Nominatim.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Nominatim.modulemap; sourceTree = "<group>"; };
+		A6549A9AE0CEAC52EC93E7C965BA3812 /* Nominatim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nominatim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6854BA6D8C5A6B03CE237F80FC7C7B9 /* Nominatim.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nominatim.modulemap; sourceTree = "<group>"; };
 		AEF48C6FF8FACB96CA471F5EF90524B0 /* Pods-Nominatim_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nominatim_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B4C93912551255FC0485E55F9F3A4CB1 /* Nominatim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nominatim.swift; path = Pods/Classes/Nominatim.swift; sourceTree = "<group>"; };
+		B4C93912551255FC0485E55F9F3A4CB1 /* Nominatim.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = Nominatim.swift; path = Pods/Classes/Nominatim.swift; sourceTree = "<group>"; tabWidth = 2; };
 		C55A1C3ED414B6C0DD76FEDCFB80E20A /* Pods-Nominatim_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nominatim_Example-dummy.m"; sourceTree = "<group>"; };
 		CB6BA2AB236DC150A6BEFE1A62EAFE4A /* Nominatim-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nominatim-dummy.m"; sourceTree = "<group>"; };
 		CBAFF2078378699C6971714394D67CDE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7192C4CA49EA65C225878B711E83318 /* Pods-Nominatim_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nominatim_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E79533AA4F205C0557F2B6B48DE158A5 /* Pods_Nominatim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Nominatim_Tests.framework; path = "Pods-Nominatim_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79533AA4F205C0557F2B6B48DE158A5 /* Pods_Nominatim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nominatim_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC21295177FB4ED1B4D77DA69F2E433E /* Pods-Nominatim_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nominatim_Example-resources.sh"; sourceTree = "<group>"; };
 		F0CB11FF52D7EC6AACBB5DE8ACF3059E /* Pods-Nominatim_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nominatim_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F97D84946D7B3B3801013E957D13CFB0 /* Pods-Nominatim_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nominatim_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FE8CE18F8EA5239AC699D02C7A64D1FE /* Pods-Nominatim_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nominatim_Example-umbrella.h"; sourceTree = "<group>"; };
-		FEE381CEC561EF9A1FDF291C9DB6BA40 /* Pods_Nominatim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Nominatim_Example.framework; path = "Pods-Nominatim_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE381CEC561EF9A1FDF291C9DB6BA40 /* Pods_Nominatim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nominatim_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
