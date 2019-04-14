@@ -9,13 +9,18 @@
 import Foundation
 
 public class Nominatim {
-    
-    public class func getLocation(fromAddress address: String, completion: @escaping (_ result: Location?) -> Void)  {
+	
+		public class func getLocation(fromAddress address: String, completion: @escaping (_ result: Location?) -> Void)  {
         
         let queryURL =  URL(string:"https://nominatim.openstreetmap.org/search/" + address.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! + "?format=json&addressdetails=1&limit=1")!
-        let session = URLSession.shared
-        
-        session.dataTask(with: queryURL, completionHandler: { data, response, error -> Void in
+				let request = URLRequest.init(url: queryURL);
+			
+			  //TODO: set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
+				//request.setValue("", forHTTPHeaderField: "User-Agent")
+			
+				let session = URLSession.shared
+			
+        session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             
             if (error != nil) {
                 completion(nil)
@@ -45,7 +50,7 @@ public class Nominatim {
                                     }
                                 }
                                 
-                                completion(Location(lat: array[0]["lat"] as! String, lon: array[0]["lon"] as! String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber))
+															completion(Location(lat: array[0]["lat"] as! String, lon: array[0]["lon"] as! String, name: array[0]["name"] as? String, displayName: array[0]["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: array[0]["licence"] as? String))
                                 
                             } else {
                                 completion(nil)
@@ -70,9 +75,14 @@ public class Nominatim {
     public class func getLocation(fromLatitude latitude: String, longitude: String, completion: @escaping (_ error: Error?, _ result: Location?) -> Void)  {
         
         let queryURL =  URL(string:"https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude + "&addressdetails=1&limit=1")!
-        let session = URLSession.shared
+				let request = URLRequest.init(url: queryURL);
+			
+				//TODO: set User agent as defined in https://operations.osmfoundation.org/policies/nominatim/
+				//request.setValue("", forHTTPHeaderField: "User-Agent")
+			
+				let session = URLSession.shared
         
-        session.dataTask(with: queryURL, completionHandler: { data, response, error -> Void in
+        session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             
             if (error != nil) {
                 completion(error, nil)
@@ -99,7 +109,7 @@ public class Nominatim {
                         state = address["state"]
                     }
                     
-                    completion(nil, Location(lat: dict["lat"] as! String, lon: dict["lon"] as! String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber))
+                    completion(nil, Location(lat: dict["lat"] as! String, lon: dict["lon"] as! String, name: dict["name"] as? String, displayName: dict["display_name"] as? String, countryCode: countryCode, country: country, state: state, county: county, postcode: postcode, city: city, cityDistrict: cityDistrict, road: road, houseNumber: houseNumber, licence: dict["licence"] as? String))
                 }
                 
             } catch {
@@ -123,10 +133,15 @@ public class Location {
     public var cityDistrict: String?
     public var road: String?
     public var houseNumber: String?
+		public var name: String?
+		public var displayName: String?
+		public var licence: String?
     
-    required public init(lat: String, lon: String, countryCode: String?,  country: String?, state: String?, county: String?, postcode: String?, city: String?, cityDistrict: String?, road: String?, houseNumber: String?) {
+		required public init(lat: String, lon: String, name: String?, displayName: String?, countryCode: String?,  country: String?, state: String?, county: String?, postcode: String?, city: String?, cityDistrict: String?, road: String?, houseNumber: String?, licence: String?) {
         self.latitude = lat
         self.longitude = lon
+				self.name = name
+				self.displayName = displayName
         self.countryCode = countryCode
         self.country = country
         self.state = state
@@ -136,6 +151,7 @@ public class Location {
         self.cityDistrict = cityDistrict
         self.road = road
         self.houseNumber = houseNumber
+				self.licence = licence
     }
     
 }
